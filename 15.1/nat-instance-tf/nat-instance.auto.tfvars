@@ -1,0 +1,7 @@
+yandex_cloud_id = "b1gm5cnlfgcnmeq4an1v"
+folder_id    = "b1ggvhbs15psoc1vgtkc"
+key_json     = "/mnt/cloud-netology/key.json"
+vm_user      = "alex"
+vm_user_nat  = "alexnat"
+ssh_key_path = "/home/alex/.ssh/id_rsa_cloud.pub"
+nat_image_id = "fd80mrhj8fl2oe87o4e1"
