@@ -52,3 +52,5 @@ resource "yandex_storage_object" "gif-object" {
   acl        = "public-read"
   depends_on = [yandex_storage_bucket.netology_dubrovin_as]
 }
+
+###
