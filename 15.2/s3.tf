@@ -1,6 +1,6 @@
 locals {
   service_acc_name     = "s3-acc"
-  bucket_name = "netology-s3"
+  bucket_name = "netology-dubrovin-s3"
   bucket_max_size = "10240"
   storage_class = "COLD"
   image_s3     = "cat"
@@ -9,7 +9,7 @@ locals {
 
 // Создание сервисного аккаунта
 resource "yandex_iam_service_account" "sa" {
-  name = var.service_acc_name
+  name = local.service_acc_name
 }
 
 // Назначение роли сервисному аккаунту
@@ -26,12 +26,12 @@ resource "yandex_iam_service_account_static_access_key" "sa-static-key" {
 }
 
 // Создание бакета с использованием ключа
-resource "yandex_storage_bucket" "test" {
+resource "yandex_storage_bucket" "netology_dubrovin_as" {
   access_key            = yandex_iam_service_account_static_access_key.sa-static-key.access_key
   secret_key            = yandex_iam_service_account_static_access_key.sa-static-key.secret_key
-  bucket                = var.bucket_name
-  max_size              = var.bucket_max_size
-  default_storage_class = var.storage_class
+  bucket                = local.bucket_name
+  max_size              = local.bucket_max_size
+  default_storage_class = local.storage_class
   anonymous_access_flags {
     read        = true
     list        = true
@@ -43,10 +43,12 @@ resource "yandex_storage_bucket" "test" {
 }
 
 // Загрузка изображения в бакет
-resource "yandex_storage_object" "test-object" {
+resource "yandex_storage_object" "gif-object" {
   access_key = yandex_iam_service_account_static_access_key.sa-static-key.access_key
   secret_key = yandex_iam_service_account_static_access_key.sa-static-key.secret_key
-  bucket     = var.bucket_name
-  key        = var.image_s3
-  source     = var.source_image_s3
+  bucket     = local.bucket_name
+  key        = local.image_s3
+  source     = local.source_image_s3
+  acl        = "public-read"
+  depends_on = [yandex_storage_bucket.netology_dubrovin_as]
 }
