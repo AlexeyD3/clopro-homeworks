@@ -1,4 +1,4 @@
-# Declaring variables for user-defined parameters
+1# Declaring variables for user-defined parameters
 
 variable "yandex_cloud_id" {
   type = string
