@@ -1,4 +1,4 @@
-resource "yandex_alb_http_router" "http-router" {
+1resource "yandex_alb_http_router" "http-router" {
   name          = "http-router"
   labels        = {
     tf-label    = "tf-label-value"
