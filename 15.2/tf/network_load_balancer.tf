@@ -1,4 +1,4 @@
-resource "yandex_lb_network_load_balancer" "network-balancer" {
+1resource "yandex_lb_network_load_balancer" "network-balancer" {
   name = "lamp-balancer"
   deletion_protection = "false"
   listener {
