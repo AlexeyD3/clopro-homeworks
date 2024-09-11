@@ -1,4 +1,4 @@
-1resource "yandex_alb_load_balancer" "application-balancer" {
+resource "yandex_alb_load_balancer" "application-balancer" {
   name        = "app-balancer"
   network_id  = yandex_vpc_network.develop.id
 
