@@ -1,4 +1,4 @@
-1resource "yandex_alb_target_group" "alb-group" {
+resource "yandex_alb_target_group" "alb-group" {
   name           = "group-vms"
 
   target {
