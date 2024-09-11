@@ -1,4 +1,4 @@
-1variable "yandex_compute_instance_groupvms" {
+variable "yandex_compute_instance_groupvms" {
   type        = list(object({
     name = string
     cores = number
