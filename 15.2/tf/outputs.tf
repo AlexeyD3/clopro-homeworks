@@ -8,7 +8,7 @@ output "all_vms" {
 }
 
 output "gif_url" {
-  value = "https://${yandex_storage_bucket.dubrovin.bucket_domain_name}/${yandex_storage_object.gif_cat.key}"
+  value = "https://${yandex_storage_bucket.zhandarov.bucket_domain_name}/${yandex_storage_object.gif_cat.key}"
   description = "Адрес загруженной в бакет картинки"
 }
 

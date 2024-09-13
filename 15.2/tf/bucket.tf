@@ -1,7 +1,7 @@
 locals {
     current_timestamp = timestamp()
     formatted_date = formatdate("DD-MM-YYYY", local.current_timestamp)
-    bucket_name = "dubrovin-${local.formatted_date}"
+    bucket_name = "zhandarov-${local.formatted_date}"
 }
 
 // Создаем сервисный аккаунт для backet
@@ -25,7 +25,7 @@ resource "yandex_iam_service_account_static_access_key" "sa-static-key" {
 }
 
 // Создание бакета с использованием ключа
-resource "yandex_storage_bucket" "dubrovin" {
+resource "yandex_storage_bucket" "zhandarov" {
   access_key = yandex_iam_service_account_static_access_key.sa-static-key.access_key
   secret_key = yandex_iam_service_account_static_access_key.sa-static-key.secret_key
   bucket = local.bucket_name
