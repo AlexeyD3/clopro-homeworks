@@ -1,4 +1,4 @@
-1resource "yandex_alb_backend_group" "backend-group" {
+resource "yandex_alb_backend_group" "backend-group" {
   name                     = "backend-balancer"
   session_affinity {
     connection {
