@@ -1,4 +1,4 @@
-locals {
+1locals {
   ssh-keys = file("/home/alex/.ssh/id_rsa.pub")
   ssh-private-keys = file("/home/alex/.ssh/id_rsa")
 }
