@@ -1,4 +1,4 @@
-###cloud vars
+1###cloud vars
 variable "key_json" {
   type        = string
   description = "https://cloud.yandex.ru/docs/iam/concepts/authorization/oauth-token"
