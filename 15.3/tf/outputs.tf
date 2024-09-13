@@ -1,4 +1,4 @@
-output "all_vms" {
+1output "all_vms" {
   value = [
     for instance in yandex_compute_instance_group.group-vms.instances : {
       name = instance.name
